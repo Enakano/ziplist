@@ -1,0 +1,25 @@
+/**
+ * Implements the ziplist function from E27.
+ * Created by Egan on 9/19/2016.
+ */
+
+const testList1 = ['a', 'b', 'c'];
+
+const testList2 = [1, 2, 3];
+
+function zipList(list1, list2) {
+  const result = [];
+  for (let i = 0; i < list1.length; i += 1) {
+    result.push(list1[i], list2[i]);
+  }
+  return result;
+}
+
+console.log(zipList(testList1, testList2));
+
+function zipListTheSimpleWay(list1, list2) {
+  const result = _.zip(list1, list2);
+  return _.flatten(result);
+}
+
+console.log(zipListTheSimpleWay(testList1, testList2));
